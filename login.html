@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>个人博客</title>
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <style type="text/css">
+  	#doc-ipt-pwd-1{
+  		border-radius: 0;
+  	}
+  	.error{
+  		color: red;
+  	}
+  </style>
+</head>
+
+<body data-type="login">
+
+  <div class="am-g myapp-login">
+	<div class="myapp-login-logo-block  tpl-login-max">
+		<div class="myapp-login-logo-text">
+			<div class="myapp-login-logo-text">
+				Amaze UI<span> Login</span> <i class="am-icon-skyatlas"></i>
+				
+			</div>
+		</div>
+
+		<div class="login-font">
+			<i>Log In </i> or <span> Sign Up</span>
+		</div>
+		<div class="am-u-sm-10 login-am-center">
+			<form class="am-form" action="login.php" method="post" id="myform">
+				<fieldset>
+					<div class="am-form-group">
+						<input type="text" class="" id="doc-ipt-email-1" placeholder="输入用户名" name = "zhanghao">
+					</div>
+					<div class="am-form-group">
+						<input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧" name="pass" autocomplete="off">
+					</div>
+					<div class="am-form-group">
+						<input type="text" class="" id="" placeholder="输入验证码" name = "code">
+					</div>
+					<p><button type="submit" class="am-btn am-btn-default">登录</button></p>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+
+  <!--<script src="assets/js/jquery-2.1.1.js"></script>
+  <script src="assets/js/amazeui.min.js"></script>
+  <script src="assets/js/app.js"></script>-->
+  
+</body>
+
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#myform").validate({
+					rules:{
+						zhanghao:{
+							required:true,
+							rangelength:[2,10],
+						},
+						pass:{
+							required:true,
+							rangelength:[6,12],
+						},
+					},
+					messages:{
+						zhanghao:{
+							required:'用户名不能为空',
+							rangelength:'请输入2-10位用户名',
+						},
+					}
+			})
+	})
+	
+</script>
+</html>
